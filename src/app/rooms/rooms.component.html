@@ -1,0 +1,52 @@
+<h3><mat-icon>group</mat-icon> Choose number of <b>people</b></h3>
+
+<table class="room">
+
+    <form >
+
+        <div flex fxLayout="row" fxLayoutAlign="center" fxLayoutGap="100px">
+
+            <mat-icon>hotel</mat-icon>
+            <h3>ROOMS</h3>
+
+            <button mat-mini-fab color="primary" (click)="roomDecrement()"
+             [disabled]="Room_counter === 1"><b>-</b></button>
+            <p>{{Room_counter}}</p>
+            <button mat-mini-fab color="accent" (click)="roomIncrement()" 
+             [disabled]="Room_counter === 5"><b>+</b></button>
+        </div>
+
+        <hr>
+
+        <div flex fxLayout="row" fxLayoutAlign="center" fxLayoutGap="100px">
+            <mat-icon>person </mat-icon>
+            <h3>ADULTS</h3>
+
+            <button mat-mini-fab color="primary" (click)="Adults_Decrement()"
+             [disabled]="Adults_counter ===1"><b>-</b></button>
+            <p>{{Adults_counter}}</p>
+
+            <button mat-mini-fab color="accent" (click)="Adults_Increment() " 
+            [disabled]="Adults_counter === capacity
+             || childAndAdults === capacity"><b>+</b></button>
+        </div>
+
+        <hr>
+
+        <div flex fxLayout="row" fxLayoutAlign="center" fxLayoutGap="100px">
+            <mat-icon>child_care</mat-icon>
+            <h3>CHILDREN</h3>
+
+            <button mat-mini-fab color="primary" (click)="childDecrement()"
+             [disabled]="childCount ===0"><b>-</b></button>
+            <p>{{childCount}}</p>
+
+            <button mat-mini-fab color="accent" (click)=" childIcrement()"
+             [disabled]="Adults_counter === capacity 
+               || childAndAdults === capacity"><b>+</b></button>
+
+        </div>
+    </form>
+</table>
+
+
